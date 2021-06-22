@@ -1,0 +1,26 @@
+[
+	{
+		"id":"CCCC0000",
+		"product_id":"BBBB0000",
+		"count":"1",
+		"created_at":""
+	},
+	{
+		"id":"CCCC0001",
+		"product_id":"BBBB0001",
+		"count":"2",
+		"created_at":""
+	},
+	{
+		"id":"CCCC0002",
+		"product_id":"BBBB0002",
+		"count":"3",
+		"created_at":""
+	},
+	{
+		"id":"CCCC0003",
+		"product_id":"BBBB0003",
+		"count":"4",
+		"created_at":""
+	}
+]

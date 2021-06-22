@@ -1,0 +1,18 @@
+[
+	{
+		"id":"AAAA0000",
+		"name":"Grocery"
+	},
+	{
+		"id":"AAAA0001",
+		"name":"Shoes"
+	},
+	{
+		"id":"AAAA0002",
+		"name":"Beverage"
+	},
+	{
+		"id":"AAAA0003",
+		"name":"Bakery"
+	}
+]
