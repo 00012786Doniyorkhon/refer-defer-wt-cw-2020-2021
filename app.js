@@ -1,6 +1,8 @@
+const constants = require('./conf/conf');
 const express = require('express');
 const app = express();
-const port = 3113;
+
+let port = constants.PORT;
 
 app.listen(port, (err)=>{
     if(err){
@@ -12,6 +14,6 @@ app.listen(port, (err)=>{
 });
 
 app.get('/', function (req, res) {
-    res.send('hello');
+    res.send(constants.API_VERSION);
 })
 
