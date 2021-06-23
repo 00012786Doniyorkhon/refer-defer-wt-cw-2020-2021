@@ -19,10 +19,9 @@ block order_app
 
             hr
             
-            button
-                a(href='/order') back    
+            a(href='/order' class="btn btn-primary") back    
             span &nbsp;
-            button#action action
+            button(class="btn btn-success" id='action') action
 
     script(src='/assets/order_modify.js')
     script window.products = JSON.parse(`#{products}`.replace(/&quot;/g,'"')); window.action = `#{action}`;

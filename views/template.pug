@@ -3,13 +3,27 @@ html(lang='en')
     head
         title Order App
         link(rel='stylesheet', href='/assets/index.css')
+        link(rel='stylesheet', href='/assets/bootstrap.min.css')
+        script(src='/assets/jquery.min.js')
+        script(src='/assets/bootstrap.min.js')
     body
-        h6
-        | This web application was created to fulfill
-        | Web Technology module&rsquo;s requirements and does not represent an actual company or service
-        br
-        a(href='/') products 
-        a(href='/order') orders  
+
+        div(class="d-flex flex-row align-items-center")
+            div(class="col")
+                h6
+                | This web application was created to fulfill
+                | Web Technology module&rsquo;s requirements and does not represent an actual company or service
+            
+            div(class="col")
+                nav.navbar.navbar-expand-lg.navbar-light.bg-light
+                    .container-fluid
+                        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+                            li.nav-item
+                            a.nav-link(href='/') products
+                            li.nav-item
+                            a.nav-link(href='/order') orders
+
         hr
         
-        block order_app
+        div(class = "container-fluid")
+            block order_app

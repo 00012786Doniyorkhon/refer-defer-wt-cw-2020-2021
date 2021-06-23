@@ -23,26 +23,7 @@ function init_table(){
                 var table = document.getElementById('products_table').getElementsByTagName('tbody')[0];
                 
                 var newrow = table.insertRow();
-                newrow.innerHTML = 
-                `
-                <td>
-                    ${name}
-                </td>
-                <td>
-                    ${category}
-                </td>
-                <td>
-                    ${price}
-                </td>
-                <td>
-                    ${description}
-                </td>
-                <td>
-                    <button><a href="/edit?id=${id}" style="text-decoration: none;">edit</a></button>
-                    <span>&nbsp;</span>
-                    <button onclick="remove('${id}');">remove</button>
-                </td>
-                `;
+                newrow.innerHTML = `<td>${name}</td><td>${category}</td><td>${price}</td><td>${description}</td><td><a href="/edit?id=${id}" class="btn btn-warning">edit</a><span>&nbsp;</span><button class="btn btn-danger" onclick="remove('${id}');">remove</button></td>`;
             })
         })
         .catch(function(error) {

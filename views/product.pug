@@ -5,11 +5,11 @@ block order_app
         
     h1= page
 
-    button 
-        a(href='/add', style='text-decoration: none;') add
+    a(href='/add', class = "btn btn-success") add
+    
     br
     br
-    table(cellpadding = '10', cellspacing = '1', border = '1', id = 'products_table')
+    table(id = 'products_table', class = "table table-striped table-bordered")
         thead
             tr
                 th Category
