@@ -42,3 +42,46 @@ app.use(api + 'product', product_router);
 
 const order_router = require('./router/order');
 app.use(api + 'order', order_router);
+
+
+app.set('view engine', 'pug');
+app.use('/assets', express.static('assets'));
+
+// index page
+
+app.get('/', (request, response)=>{
+    response.render('product', {
+        page: "Products",
+        categories: fs.readFileSync(root_dir + '/data/category.json', 'utf8')
+    });
+});
+
+app.get('/add', (request, response)=>{
+    response.render('product_modify', {
+        page: "Product: Create",
+        categories: fs.readFileSync(root_dir + '/data/category.json', 'utf8')
+    });
+});
+
+app.get('/edit', (request, response)=>{
+    response.render('product_modify', {
+        page: "Product: Edit",
+        categories: fs.readFileSync(root_dir + '/data/category.json', 'utf8'),
+        action: 'edit'
+    });
+});
+
+app.get('/order', (request, response)=>{
+    response.render('order', {
+        page: "Orders",
+        products: fs.readFileSync(root_dir + '/data/product.json', 'utf8')
+    });
+});
+
+app.get('/order/add', (request, response)=>{
+    response.render('order_modify', {
+        page: "Order: add",
+        products: fs.readFileSync(root_dir + '/data/product.json', 'utf8'),
+        action: 'add'
+    });
+});

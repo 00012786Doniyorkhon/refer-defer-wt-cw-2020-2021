@@ -1,0 +1,20 @@
+extends template.pug
+block order_app
+    script window.categories = JSON.parse(`#{categories}`.replace(/&quot;/g,'"'));
+    script(src='/assets/product.js')
+        
+    h1= page
+
+    button 
+        a(href='/add', style='text-decoration: none;') add
+    br
+    br
+    table(cellpadding = '10', cellspacing = '1', border = '1', id = 'products_table')
+        thead
+            tr
+                th Category
+                th Product
+                th Price
+                th Description
+                th Action
+        tbody

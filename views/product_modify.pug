@@ -1,0 +1,41 @@
+extends template.pug
+block order_app
+    
+    h1= page
+
+    div.form-container
+        form.add(onsubmit='return false;')
+            input#product_id(type='hidden' style='color: #ccc; margin-bottom: 5px;')
+            label(for='category_id')
+                b Category
+            br
+            select#category_id(name='category_id' required='required')
+            br
+
+            label(for='name')
+                b Name
+            br
+            input#name(type='text' placeholder='' name='name' required='required')
+            br
+            
+            label(for='price')
+                b Price
+            br
+            input#price(type='number' placeholder='' name='price' required='required')
+            br
+
+            br
+            label(for='description')
+                b Description
+            br
+            input#description(type='text' placeholder='' name='description' required='required')
+
+            hr
+            
+            button
+                a(href='/') back    
+            span &nbsp;
+            button#action action
+
+    script(src='/assets/product_modify.js')
+    script window.categories = JSON.parse(`#{categories}`.replace(/&quot;/g,'"')); window.action = `#{action}`;

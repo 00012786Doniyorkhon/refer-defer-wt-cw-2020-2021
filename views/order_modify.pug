@@ -1,0 +1,28 @@
+extends template.pug
+block order_app
+    
+    h1= page
+
+    div.form-container
+        form.add(onsubmit='return false;')
+            label(for='product_id')
+                b Product
+            br
+            select#product_id(name='product_id' required='required')
+            br
+
+            label(for='count')
+                b Count
+            br
+            input#count(type='number' placeholder='' name='count' required='required')
+            br
+
+            hr
+            
+            button
+                a(href='/order') back    
+            span &nbsp;
+            button#action action
+
+    script(src='/assets/order_modify.js')
+    script window.products = JSON.parse(`#{products}`.replace(/&quot;/g,'"')); window.action = `#{action}`;

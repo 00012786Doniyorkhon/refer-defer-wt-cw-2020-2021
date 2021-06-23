@@ -1,0 +1,18 @@
+extends template.pug
+block order_app
+    script window.products = JSON.parse(`#{products}`.replace(/&quot;/g,'"'));
+    script(src='/assets/order.js')
+        
+    h1= page
+
+    button 
+        a(href='/order/add', style='text-decoration: none;') add
+    br
+    br
+    table(cellpadding = '10', cellspacing = '1', border = '1', id = 'order_table')
+        thead
+            tr
+                th Product
+                th Count
+                th Date
+        tbody
